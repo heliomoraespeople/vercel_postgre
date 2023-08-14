@@ -28,6 +28,7 @@
   "dependencies": {
     "@azure/msal-browser": "^2.31.0",
     "@azure/msal-react": "^1.4.10",
+    "@vercel/postgres": "^0.4.1",
     "hamburger-react": "^2.5.0",
     "next": "^12.3.0",
     "react": "^18.2.0",
