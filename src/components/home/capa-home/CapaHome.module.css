@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  @media screen(xl) {
+    max-width: 1366px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen(lg) {
+    flex-direction: row;
+  }
+}
+
+.container div {
+  width: 100%;
+}
+
+.sectionLeft {
+  background: theme('colors.azulEscuro');
+  padding: 38px 75px 96px 16px;
+  order: 2;
+  max-width: 85%;
+  margin-top: -192px;
+
+  @media screen(lg) {
+    margin-top: initial;
+    max-width: 568px;
+    padding: 93px 63px 130px 136px;
+    order: 1;
+  }
+}
+
+.sectionRight {
+  order: 1;
+
+  @media screen(lg) {
+    order: 2;
+  }
+}
+
+.imgBanner {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 2.6rem;
+  font-weight: 800;
+
+  @media screen(sm) {
+    margin-right: 12px;
+  }
+
+  @media screen(md) {
+    font-size: 3.6rem;
+    line-height: 3.6rem;
+  }
+}
+
+.titleLg {
+  font-size: 3.6rem;
+  line-height: 3.6rem;
+
+  @media screen(md) {
+    font-size: 6.4rem;
+    line-height: 6.4rem;
+  }
+}
+
+.textWrapper {
+  margin-top: 6px;
+
+  @media screen(lg) {
+    margin-top: 16px;
+  }
+
+  @media screen(md) {}
+}
+
+.text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 32px;
+
+  @media screen(md) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  @media screen(sm) {}
+}

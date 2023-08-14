@@ -1,0 +1,40 @@
+.title {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+
+  @media screen(md) {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.title::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: #009FC2;
+  margin-bottom: 4px;
+
+  @media screen(lg) {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 12px;
+  }
+}
+
+.TextsAtuacao p {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #F0F8FA;
+  margin: 4px 0 16px;
+
+  @media screen(md) {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 8px 0 16px;
+  }
+}

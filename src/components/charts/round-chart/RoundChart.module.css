@@ -1,0 +1,46 @@
+.container {
+  height: 100%;
+
+  @media screen(lg) {
+    width: 98%;
+  }
+}
+
+.value,
+.label {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: 600;
+}
+
+.value {
+  @media screen(xl) {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 700;
+  }
+}
+
+.label {
+  max-width: 20px;
+
+  @media screen(xl) {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

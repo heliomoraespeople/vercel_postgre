@@ -1,0 +1,13 @@
+.nextWrapper,
+.prevWrapper {
+  position: absolute;
+}
+
+.prevWrapper {
+  right: 0;
+}
+
+.customPaging * {
+  display: inline;
+  height: 24px;
+}

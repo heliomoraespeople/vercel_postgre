@@ -1,0 +1,130 @@
+.bg {
+  max-width: 100vw;
+
+  @media screen(lg) {
+    margin-bottom: 60px;
+  }
+}
+
+.container {
+  padding: 0px 0px 68px 0px;
+
+  @media screen(lg) {
+    max-width: 962px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 405px 405px;
+    grid-template-rows: 50px 1fr;
+  }
+}
+
+.container h1 {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #005174;
+  padding: 0px 16px 0 24px;
+
+  @media screen(lg) {
+    font-size: 40px;
+    line-height: 46px;
+    padding: 0 0 0 40px; 
+
+    grid-column: 1/3;
+    grid-row: 1/1;
+  }
+}
+
+.container h1 span {
+  font-weight: 300;
+
+  @media screen(lg) {}
+}
+
+.infosBack {
+  background: #F0F8FA;
+  padding: 24px 25px 10px 24px; 
+  max-width: 88%;
+  margin-top: 8px;
+  position: relative;
+
+  @media screen(lg) {
+    max-width: 80%;
+    height: max-content;
+    padding: 32px 161px 10px 40px; 
+    grid-column: 1/4;
+    grid-row: 2/2;
+  }
+}
+
+.infosBack::after {
+  content: '';
+  display: block;
+  background: #F0F8FA;
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  left: 0;
+}
+
+.infosBack h4 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 800;
+  color: #4F4C4B;
+
+  @media screen(lg) {
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+.infosBack p {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  max-width: 260px;
+  margin: 10px 0 24px;
+
+  @media screen(lg) {
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 479px;
+    margin: 16px 0 24px;
+  }
+}
+
+.cards {
+  margin: 32px 16px 0 24px;
+  display: grid;
+  gap: 8px;
+
+  @media screen(lg) {
+    margin: 0;
+    grid-template-columns: 405px 405px;
+    grid-template-rows: 1fr 1fr;
+    grid-column: 2/2;
+    grid-row: 2/2;
+  }
+}
+
+.cards div:nth-of-type(1) {
+  @media screen(lg) {
+    grid-column: 2/2;
+    grid-row: 1/1;
+  }
+}
+
+.cards div:nth-of-type(2) {
+  @media screen(lg) {
+    grid-column: 1/2;
+    grid-row: 2/2;
+  }
+}
+
+.cards div:nth-of-type(3) {
+  @media screen(lg) {
+    grid-column: 2/2;
+    grid-row: 2/2;
+  }
+}

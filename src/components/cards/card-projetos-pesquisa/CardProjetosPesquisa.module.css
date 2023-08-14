@@ -1,0 +1,152 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 336px;
+  text-align: left;
+
+  @media screen(md) {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  @media screen(lg) {
+    max-width: 448px;
+  }
+}
+
+.container>div {
+  width: 328px;
+
+  @media screen(lg) {
+    width: 424px;
+  }
+}
+
+.image {
+  position: relative;
+  background: theme('colors.azulClaro');
+}
+
+.image img {
+  object-fit: scale-down;
+  width: 328px;
+  height: 208px;
+
+  @media screen(lg) {
+    width: 424px;
+    height: 264px;
+  }
+}
+
+.tagsArea {
+  gap: 4px;
+}
+
+.gridViewTags {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+}
+
+.listViewTags {
+  display: none;
+  margin-bottom: 8px;
+
+  @media screen(lg) {
+    float: right;
+  }
+}
+
+.tag {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  font-weight: 700;
+  color: theme('colors.branco');
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.content {
+  align-self: flex-end;
+  background: theme('colors.azulClaro');
+  padding: 38px 8px 8px;
+  margin-top: -30px;
+
+  @media screen(lg) {
+    padding: 34px 7px 20px 15px;
+    margin-top: -26px;
+  }
+}
+
+.title {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+
+  @media screen(lg) {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin-bottom: 10px;
+  }
+}
+
+.details {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+
+  @media screen(lg) {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+}
+
+.container--list {
+  max-width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container--list .image {
+  display: none;
+  width: fit-content;
+
+  @media screen(md) {
+    display: block;
+  }
+}
+
+.container--list .image img {
+  @media screen(md) {
+    width: 166px;
+    height: 134px;
+  }
+
+  @media screen(lg) {
+    width: 136px;
+    height: 104px;
+  }
+}
+
+.container--list .title {
+  display: inline-block;
+}
+
+.container--list .content {
+  align-self: center;
+  flex: 1 0;
+  padding: 9px 10px 11px 11px;
+  margin-top: 0px;
+}
+
+.container--list .details {
+  line-height: 1.8rem;
+}
+
+.container--list .gridViewTags {
+  display: none;
+}
+
+.container--list .listViewTags {
+  display: flex;
+}

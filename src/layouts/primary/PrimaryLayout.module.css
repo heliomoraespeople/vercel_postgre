@@ -1,0 +1,8 @@
+.main {
+  background-color: white;
+  margin-top: 114px;
+
+  @media screen(sm) {
+    margin-top: 72px;
+  }
+}

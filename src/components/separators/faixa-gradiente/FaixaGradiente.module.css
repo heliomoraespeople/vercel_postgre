@@ -1,0 +1,13 @@
+.container {
+  height: 4px;
+  background:
+    linear-gradient(247.9deg,
+      theme('colors.verdeCitrico') 29.93%,
+      theme('colors.verde.100') 69.58%,
+      theme('colors.azul') 112.29%);
+  transform-origin: 1px;
+}
+
+.container--vertical {
+  transform: rotate(90deg);
+}

@@ -1,0 +1,136 @@
+.container {
+  --top-offset: 88px;
+  display: flex;
+  flex-flow: column;
+  color: theme('colors.cinza.300');
+  margin-bottom: 82px;
+  margin-top: calc(var(--top-offset) + 51px);
+  position: relative;
+
+  @media screen(lg) {
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 0 auto 82px;
+    max-width: 1366px;
+  }
+}
+
+.sectionLeft {
+  position: absolute;
+  right: 0;
+  top: calc(var(--top-offset) * -1);
+
+  @media screen(lg) {
+    position: static;
+  }
+}
+
+.sectionLeft img {
+  width: 179px;
+
+  @media screen(sm) {
+    width: 300px
+  }
+
+  @media screen(md) {
+    width: 400px;
+  }
+
+  @media screen(lg) {
+    width: unset;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  height: 47px;
+  background: theme('colors.azulEscuro');
+  color: theme('colors.branco');
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 800;
+  text-align: center;
+  padding-left: 16px;
+
+  @media screen(lg) {
+    height: 61px;
+    width: 715px;
+    margin-left: 55px;
+    z-index: 200;
+  }
+}
+
+.title p {
+  text-align: center;
+}
+
+.sectionRight {
+  background-color: theme('colors.azulClaro');
+  padding: 14px 16px 33px;
+
+  @media screen(md) {
+    padding: 32px 50px 47px;
+  }
+
+  @media screen(lg) {
+    width: 579px;
+    padding-top: 60px;
+    margin-top: -28px;
+  }
+}
+
+.item {
+  display: flex;
+  flex-flow: column;
+
+  @media screen(sm) {
+    max-width: 320px;
+  }
+
+  @media screen(lg) {
+    flex-flow: row;
+    max-width: unset;
+  }
+}
+
+.item+.item {
+  margin-top: 50px;
+}
+
+.icon {
+  height: 64px;
+  margin-bottom: 10px;
+
+  @media screen(lg) {
+    height: 80px;
+    margin-right: 40px;
+  }
+}
+
+.icon svg {
+  height: 100%;
+  width: fit-content;
+}
+
+.item h5 {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+
+  @media screen(lg) {
+    margin-bottom: 8px;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 700;
+  }
+}
+
+.item p {
+  margin-bottom: 16px;
+
+  @media screen(lg) {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+}

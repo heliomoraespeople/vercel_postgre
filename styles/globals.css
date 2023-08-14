@@ -1,0 +1,38 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 12px;
+  line-height: 16px;
+  font-family: 'Open Sans', serif;
+
+  @media screen(md) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+button {
+  outline: none;
+}
+
+.capa-title {
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+
+  @media screen(sm) {
+    margin-right: 12px;
+  }
+
+  @media screen(md) {
+    font-size: 4rem;
+    line-height: 4.6rem;
+  }
+}
+
+.ReactModal__Overlay {
+    z-index: 2000;
+}

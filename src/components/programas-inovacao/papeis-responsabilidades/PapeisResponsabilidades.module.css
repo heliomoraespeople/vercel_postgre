@@ -1,0 +1,179 @@
+.containerResponsabilidades {
+  max-width: 1243px;
+  margin: 0 auto;
+  margin-bottom: 51px;
+
+  @media screen(xl) {
+    margin-bottom: 136px;
+  }
+}
+
+.wrapperResponsabilidades {
+  position: relative;
+  height: 465px;
+}
+
+.top {
+  width: 100%;
+  max-width: 140px;
+  height: 211px;
+  background: #f0f8fa;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+
+  @media screen(md) {
+    left: 30%;
+    height: 203px;
+  }
+
+  @media screen(lg) {
+    max-width: 350px;
+  }
+}
+
+.middle {
+  width: 100%;
+  max-width: 140px;
+  height: 211px;
+  background: #f0f8fa;
+  position: absolute;
+  top: 150px;
+  right: 0;
+  z-index: 1;
+
+  @media screen(md) {
+    max-width: 261px;
+    height: 346px;
+    top: 0;
+  }
+}
+
+.bottom {
+  width: 100%;
+  max-width: 290px;
+  height: 74px;
+  background: #f0f8fa;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+
+  @media screen(lg) {
+    left: 38%;
+    height: 156px;
+    bottom: 70px;
+    width: 211px;
+  }
+
+  @media screen(md) {
+    max-width: 400px;
+  }
+}
+
+.topResponsabilidades {
+  padding: 0 23px;
+  grid-area: title;
+
+  @media screen(md) {
+    margin: auto;
+  }
+}
+
+.titleResponsabilidades {
+  color: theme('colors.azulEscuro');
+  font-weight: 300;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+
+  @media screen(md) {
+    font-size: 4rem;
+    line-height: 4.6rem;
+  }
+}
+
+.textResponsabilidades {
+  color: theme('colors.cinza.700');
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+
+  @media screen(md) {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  @media screen(lg) {
+    width: 324px;
+  }
+}
+
+.cardsContainer {
+  position: absolute;
+  z-index: 2;
+  padding: 10px 23px;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  @media screen(md) {
+    display: grid;
+    grid-template-areas:
+      'title card1'
+      'title card1'
+      'card2 card2';
+    grid-template-columns: 40% 60%;
+  }
+}
+
+.firstCard {
+  width: 100%;
+  max-width: 261px;
+
+  @media screen(md) {
+    width: 245px;
+    grid-area: card1;
+    margin-top: auto;
+    margin-left: 212px;
+    max-width: 485px;
+  }
+
+  @media screen(lg) {
+    width: 279px;
+    margin-left: 258px;
+  }
+}
+
+.secondCard {
+  width: 100%;
+  max-width: 249px;
+  margin-left: 50px;
+
+  @media screen(md) {
+    max-width: 485px;
+    width: 408px;
+    grid-area: card2;
+    margin: 0 auto;
+  }
+}
+
+.title {
+  color: theme('colors.cinza.200');
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.textContent {
+  color: theme('colors.cinza.700');
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+
+  @media screen(md) {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+}

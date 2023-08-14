@@ -1,0 +1,185 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  color: theme('colors.cinza.700');
+  margin-bottom: 55px;
+
+  @media screen(lg) {
+    margin-bottom: 100px;
+    flex-direction: row;
+  }
+}
+
+.container:last-child {
+  margin-bottom: 0;
+}
+
+.container .titleWrapper {
+  display: flex;
+  width: 323px;
+  padding: 19px 18px;
+  background-color: theme('colors.azulEscuro');
+  color: theme('colors.branco');
+
+  @media screen(md) {
+    width: 472px;
+    height: 232px;
+    padding: 28px 52px;
+    flex-flow: column;
+    justify-content: flex-end;
+  }
+}
+
+.titleWrapper p {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 800;
+  max-width: 70%;
+
+  @media screen(md) {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    font-weight: 600;
+    max-width: 100%;
+  }
+}
+
+.iconWrapper {
+  margin-right: 17px;
+  width: 65px;
+  height: 65px;
+
+  @media screen(md) {
+    width: 98px;
+    height: 98px;
+    margin-bottom: 20px;
+  }
+}
+
+.iconWrapper svg {
+  width: 100%;
+  height: 100%;
+}
+
+.briefing {
+  margin: 16px;
+
+  @media screen(lg) {
+    width: 317px;
+    margin: 24px 48px;
+  }
+}
+
+.sectionLeft {
+  @media screen(lg) {
+    z-index: 200;
+  }
+}
+
+.sectionRight {
+  margin: 0 16px;
+
+  @media screen(lg) {
+    position: relative;
+    padding: 33px 44px 48px 99px;
+    margin: 40px 0 0 -40px;
+    background-color: theme('colors.azulClaro');
+    z-index: 100;
+  }
+
+  @media screen(xl) {
+    margin: 40px 0 0 -58px;
+    padding: 33px 32px 48px 107px;
+    max-height: 360px;
+  }
+}
+
+.subAreasWrapper {
+  height: 0;
+  overflow: hidden;
+  transition: height ease 0.5s;
+}
+
+.subAreasGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 16px;
+  column-gap: 13px;
+  row-gap: 24px;
+
+  @media screen(md) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media screen(lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media screen(xl) {
+    column-gap: 62px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.subAreasButton {
+  color: theme('colors.cinza.400');
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 800;
+
+  @media screen(lg) {
+    cursor: default;
+  }
+}
+
+.subAreasButton:after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 12px;
+  margin-bottom: 2px;
+  transform: rotate(135deg);
+  border-top: 3px solid theme('colors.cinza.400');
+  border-right: 3px solid theme('colors.cinza.400');
+
+  @media screen(lg) {
+    display: none;
+  }
+}
+
+.opened:after {
+  transform: rotate(-45deg);
+  margin-bottom: -3px;
+}
+
+.outrasAreas {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: -27px;
+
+  @media screen(lg) {
+    display: block;
+  }
+}
+
+.subArea {
+  @media screen(md) {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+}
+
+.subArea:before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: theme('colors.azulBase');
+  margin-bottom: 8px;
+}

@@ -1,0 +1,150 @@
+.container {
+  position: fixed;
+  width: 100%;
+  height: 114px;
+  top: 0;
+  left: 0;
+  box-shadow: none;
+  transition: opacity 1s ease;
+  color: theme('colors.branco');
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  background: rgba(0, 81, 116, 0.88);
+  z-index: 1000;
+
+  @media screen(sm) {
+    height: 72px;
+  }
+
+  @media screen(xl) {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+}
+
+.navDesktop {
+  display: flex;
+  height: 100%;
+  font-weight: 600;
+}
+
+.navDesktop > ul {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen(xl) {
+    gap: 18px;
+  }
+}
+
+.navDesktop > ul > li {
+  cursor: pointer;
+  transition: background-color 0.7s;
+  max-width: 120px;
+
+  @media screen(lg) {
+    display: flex;
+    height: 100%;
+    padding: 0 12px;
+  }
+}
+
+.navDesktop > ul > li:first-of-type {
+  max-width: 77px;
+}
+
+.navDesktop > ul > li:hover:not(.active) {
+  @media screen(lg) {
+    background-color: theme('colors.azulBase');
+  }
+}
+
+li.active,
+.activeMobile,
+.navMobile {
+  color: theme('colors.cinza.100');
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+li.active:after,
+.activeMobile:after {
+  content: '';
+  height: 64px;
+  border-radius: 4px 4px 0px 0px;
+  background: theme('colors.branco');
+  z-index: 1100;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.active button,
+.activeMobile button,
+.activeMobile svg {
+  z-index: 1200;
+}
+
+.container.activeBg {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px 0 5px;
+
+  @media screen(lg) {
+    padding: 0 12px;
+  }
+
+  @media screen(lg) {
+    padding: 0;
+  }
+
+  @media screen(xl) {
+    padding: 0 88px;
+  }
+
+  @media screen(sm) {
+    height: 100%;
+  }
+}
+
+.activeMobile {
+  padding: 10px;
+  color: theme('colors.azulEscuro');
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+
+  @media screen(sm) {
+    font-size: 1.8rem;
+    line-height: 1.6rem;
+  }
+}
+
+.navMobile {
+  padding: 10px;
+  color: #ffffff;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+
+  @media screen(sm) {
+    font-size: 1.8rem;
+    line-height: 1.6rem;
+  }
+}
+
+.activeMobile:after {
+  height: 43px;
+  top: 5px;
+
+  @media screen(sm) {
+    height: 72px;
+    top: -5px;
+  }
+}

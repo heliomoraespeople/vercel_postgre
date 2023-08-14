@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.bar {
+  background: theme('colors.verdeCitrico');
+  height: 2px;
+  width: 72%;
+  transition: 0.2s;
+  margin-top: 1px;
+}
+
+.container:hover .bar {
+  width: 100%;
+}
+
+.downloadable:before {
+  content: url('/download.svg');
+  height: 15px;
+  margin-right: 4px;
+}

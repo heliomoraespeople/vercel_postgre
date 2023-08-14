@@ -1,0 +1,124 @@
+.checkbox {
+  display: grid;
+  cursor: pointer;
+  grid-template-columns: 15px 1fr;
+}
+
+.checkbox input[type='checkbox'],
+.checkboxType1 input[type='checkbox'],
+.checkboxType2 input[type='checkbox'],
+.checkboxType3 input[type='checkbox'],
+.checkboxType4 input[type='checkbox'],
+.checkboxType5 input[type='checkbox'],
+.checkboxType6 input[type='checkbox'] {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border: 2px solid theme('colors.cinza.200');
+  cursor: pointer;
+}
+
+.checkboxType1 input[type='checkbox'] {
+  border: 2px solid theme('colors.cinza.200');
+}
+
+.checkboxType2 input[type='checkbox'] {
+  border: 2px solid theme('colors.laranja');
+}
+
+.checkboxType3 input[type='checkbox'] {
+  border: 2px solid theme('colors.azulBase');
+}
+
+.checkboxType4 input[type='checkbox'] {
+  border: 2px solid theme('colors.verdeCitrico');
+}
+
+.checkboxType5 input[type='checkbox'] {
+  border: 2px solid theme('colors.verde.100');
+}
+
+.checkboxType6 input[type='checkbox'] {
+  border: 2px solid theme('colors.azulEscuro');
+}
+
+
+.checkbox input[type='checkbox']:checked {
+  border-color: theme('colors.cinza.200');
+  background-color: theme('colors.cinza.200');
+}
+
+.checkbox input[type='checkbox']:checked:before,
+.checkboxType1 input[type='checkbox']:checked:before,
+.checkboxType2 input[type='checkbox']:checked:before,
+.checkboxType3 input[type='checkbox']:checked:before,
+.checkboxType4 input[type='checkbox']:checked:before,
+.checkboxType5 input[type='checkbox']:checked:before,
+.checkboxType6 input[type='checkbox']:checked:before {
+  content: '\2713';
+  display: block;
+  color: white;
+  text-align: center;
+  line-height: 9px;
+}
+
+.checkboxLabel {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  color: theme('colors.cinza.200');
+}
+
+.checkboxLabel1 {
+  color: theme('colors.cinza.800');
+}
+
+.checkboxLabel2 {
+  color: theme('colors.laranja');
+}
+
+.checkboxLabel3 {
+  color: theme('colors.azulBase');
+}
+
+.checkboxLabel4 {
+  color: theme('colors.verdeCitrico');
+}
+
+.checkboxLabel5 {
+  color: theme('colors.verde.100');
+}
+
+.checkboxLabel6 {
+  color: theme('colors.azulEscuro');
+}
+
+.checkboxType1 input[type='checkbox']:checked {
+  border-color: theme('colors.cinza.800');
+  background-color: theme('colors.cinza.800');
+}
+
+.checkboxType2 input[type='checkbox']:checked {
+  border-color: theme('colors.laranja');
+  background-color: theme('colors.laranja');
+}
+
+.checkboxType3 input[type='checkbox']:checked {
+  border-color: theme('colors.azulBase');
+  background-color: theme('colors.azulBase');
+}
+
+.checkboxType6 input[type='checkbox']:checked {
+  border-color: theme('colors.azulEscuro');
+  background-color: theme('colors.azulEscuro');
+}
+
+.checkboxType4 input[type='checkbox']:checked {
+  border-color: theme('colors.verdeCitrico');
+  background-color: theme('colors.verdeCitrico');
+}
+
+.checkboxType5 input[type='checkbox']:checked {
+  border-color: theme('colors.verde.100');
+  background-color: theme('colors.verde.100');
+}

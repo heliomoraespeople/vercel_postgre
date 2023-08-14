@@ -1,0 +1,40 @@
+.container {
+  margin-bottom: 77px;
+
+  @media screen(lg) {
+    max-width: 1366px;
+    margin: 0 auto;
+    margin-bottom: 120px;
+  }
+}
+
+.title {
+  width: 316px;
+  padding: 16px 21px 18px;
+  margin-bottom: -31px;
+  z-index: 200;
+  position: relative;
+
+  @media screen(lg) {
+    width: 512px;
+    margin-bottom: -96px;
+    padding: 49px 71px 50px 265px;
+  }
+}
+
+.title h3 {
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+
+  @media screen(lg) {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+.content {
+  @media screen(xl) {
+    display: flex;
+    justify-content: center;
+  }
+}

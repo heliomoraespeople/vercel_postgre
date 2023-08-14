@@ -1,0 +1,55 @@
+{
+  "extends": [
+    "plugin:storybook/recommended",
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended"
+  ],
+  "globals": {
+    "React": "readonly"
+  },
+  "ignorePatterns": ["node_modules/*", ".next/*", ".out/*", "!.prettierrc.js"],
+  "overrides": [{
+      "files": [
+        "*.stories.@(ts|tsx|js|jsx|mjs|cjs)"
+      ],
+      "rules": {
+        "storybook/hierarchy-separator": "error"
+      }
+    },
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "settings": {
+        "react": {
+          "version": "detect"
+        }}
+      ,
+      "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:jsx-a11y/recommended"
+      ],
+      "rules": {
+        "react-hooks/exhaustive-deps": "off",
+        "react/prop-types": "off",
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "jsx-a11y/anchor-is-valid": "off",
+        "@typescript-eslint/explicit-function-return-type": [
+          "warn",
+          {
+            "allowExpressions": true,
+            "allowConciseArrowFunctionExpressionsStartingWithVoid": true
+          }
+        ]
+      }
+    }
+  ]
+}

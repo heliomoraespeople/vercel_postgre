@@ -1,0 +1,25 @@
+.wrapper-geral {
+  padding: 0 16px;
+
+  @media screen(lg) {
+    max-width: 970px;
+    margin: 0 auto;
+  }
+
+  @media screen(xl) {
+    max-width: 1366px;
+  }
+
+  @media screen(lg) {
+    padding: 0;
+  }
+}
+
+.wrapper-carousel {
+  margin: 0 4px;
+
+  @media screen(sm) {
+    width: 88%;
+    margin: 0 auto;
+  }
+}

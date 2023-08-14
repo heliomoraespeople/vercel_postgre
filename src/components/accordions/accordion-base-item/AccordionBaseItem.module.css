@@ -1,0 +1,68 @@
+.container {
+  list-style: none;
+  border-bottom: 1px solid #b7bbbd;
+}
+
+.button {
+  display: flex;
+  width: 100%;
+  height: 56px;
+  background-color: theme('colors.branco');
+  color: #4b4d4f;
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 400;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 8px;
+  cursor: pointer;
+  background-clip: padding-box;
+  position: relative;
+  outline: none;
+  align-items: center;
+
+  @media screen(lg) {
+    height: 68px;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+}
+
+.button span {
+  @media (max-width: 900px) {
+    max-width: 245px;
+  }
+}
+
+.control {
+  font-size: 20px;
+  line-height: 1.2em;
+}
+
+.content {
+  padding: 2px 20px 14px;
+  background-color: theme('colors.branco');
+  color: theme('colors.cinza.700');
+
+  @media screen(md) {
+    padding: 0 20px 22px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+}
+
+.content p,
+.content ol {
+  margin-bottom: 10px;
+}
+
+.content ol {
+  list-style: inside decimal;
+}
+
+.contentWrapper {
+  height: 0;
+  overflow: hidden;
+  transition: height ease 0.5s;
+}

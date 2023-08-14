@@ -1,0 +1,146 @@
+.container {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+
+  @media screen(lg) {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    font-weight: 400;
+  }
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column;
+  margin: 0 auto;
+
+  @media screen(lg) {
+    flex-flow: row;
+    max-width: 1046px;
+    justify-content: space-between;
+  }
+}
+
+.wrapper p+p {
+  text-align: center;
+
+  @media (min-width:900px) {
+    font-size: 1.0rem;
+    line-height: 1.4rem;
+    text-align: left;
+  }
+}
+
+.top {
+  height: 472px;
+  background: theme('colors.azulEscuro');
+  padding: 41px;
+
+  @media screen(lg) {
+    height: 205px;
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  background: theme('colors.branco');
+  padding: 24px 34px;
+  text-align: center;
+}
+
+.logo {
+  @media screen(lg) {
+    flex: 0 1 178px;
+  }
+}
+
+.menuItens {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, auto));
+  row-gap: 24px;
+  column-gap: 62px;
+  font-weight: 600;
+  padding: 24px 0;
+  text-align: center;
+  justify-items: center;
+
+
+
+  @media screen(lg) {
+    width: fit-content;
+    position: relative;
+    grid-template-columns: repeat(2, minmax(0, auto));
+    row-gap: 16px;
+    column-gap: 62px;
+    padding: 60px 120px;
+    font-weight: 700;
+    /* temp poucos items */
+    padding-bottom: 70px;
+    text-align: right;
+  justify-items: start;
+  }
+}
+
+.menuItens a {
+  width: fit-content;
+}
+
+.menuItens::before,
+.menuItens::after {
+
+  @media screen(lg) {
+    content: '';
+    width: 1px;
+    height: 128px;
+    display: block;
+    background-color: #74C7B8;
+    opacity: 0.2;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+}
+
+.menuItens::before {
+  left: 0;
+  /* margin-left: -30px; */
+}
+
+.menuItens::after {
+  right: 0;
+  /* margin-right: -30px; */
+}
+
+.redes {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  font-weight: 600;
+}
+
+.redes p {
+  margin-bottom: 8px;
+  text-align: center;
+
+  @media screen(lg) {
+    text-align: left;
+  }
+}
+
+.redes>div {
+  display: flex;
+  width: 116px;
+  justify-content: space-between;
+}
+
+.redesTitle {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  font-weight: 600;
+}

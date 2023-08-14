@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  padding: 0px 0px 78px 16px;
+  margin-top: -56px;
+
+  @media screen(md) {
+    padding: 0px 0 90px;
+    margin-top: -67px
+  }
+}
+
+.slide {
+  width: 320px;
+  height: 350px;
+  background-color: aliceblue;
+
+  @media screen(md) {
+    height: 400px;
+  }
+}

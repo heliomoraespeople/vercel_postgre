@@ -1,0 +1,85 @@
+.container {
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 200;
+  margin-bottom: 16px;
+
+  @media screen(md) {
+    flex-direction: row;
+  }
+
+  @media screen(xl) {
+    max-width: 1366px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+  }
+}
+
+.sectionLeft {
+  background: theme('colors.azulEscuro');
+  padding: 20px 36px 36px 20px;
+  order: 2;
+  width: 292px;
+  margin-top: -143px;
+
+  @media screen(md) {
+    height: 392px;
+    max-width: 936px;
+    width: 70%;
+    padding: 93px 63px;
+    margin-top: initial;
+    order: 1;
+  }
+
+  @media screen(xl) {
+    display: flex;
+    gap: 60px;
+    position: relative;
+    padding: 131px 200px 130px 88px;
+  }
+}
+
+.sectionRight {
+  order: 1;
+
+  @media screen(xl) {
+    order: 2;
+    z-index: 200;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.textWrapper {
+  margin-top: 21px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+
+  @media screen(md) {
+    margin-top: 25px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  @media screen(xl) {
+    margin-top: 0;
+  }
+}
+
+.imgBanner {
+  display: block;
+  height: 248px;
+  object-fit: cover;
+
+  @media screen(sm) {
+    height: 312px;
+  }
+
+  @media screen(lg) {
+    height: 344px;
+  }
+}

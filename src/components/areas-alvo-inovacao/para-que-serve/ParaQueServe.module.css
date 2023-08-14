@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: -50px;
+  margin-bottom: 62px;
+  z-index: 100;
+  position: relative;
+
+  @media screen(md) {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 115px;
+  }
+
+  @media screen(xl) {
+    max-width: 1366px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 82px;
+  }
+}
+
+.title {
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  font-weight: 300;
+  color: theme('colors.azulEscuro');
+  margin-bottom: 20px;
+
+  @media screen(md) {
+    margin-bottom: 24px;
+    font-size: 4rem;
+    line-height: 5.3rem;
+  }
+}
+
+.sectionLeft {
+  @media screen(md) {
+    padding: 0 20px 0 20px;
+  }
+
+  @media screen(xl) {
+    padding: 0 40px 0 53px;
+    flex: 0 0 42%;
+  }
+}
+
+.sectionRight {
+  padding: 42px 20px 0;
+
+  @media screen(md) {
+    width: 44%;
+    padding-right: 20px;
+  }
+
+  @media screen(xl) {
+    padding-right: 0;
+    max-width: 578px;
+    flex: 0 0 58%;
+  }
+}
+
+.cardWrapper {
+  margin-top: 24px;
+  max-width: 384px;
+
+  @media screen(md) {
+    margin-top: 41px;
+  }
+
+  @media screen(lg) {
+    margin-right: -41px;
+  }
+
+  @media screen(xl) {
+    margin-right: -84px;
+  }
+}

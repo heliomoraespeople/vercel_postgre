@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.check {
+  height: 100%;
+  text-align: center;
+}
+
+.check input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.control:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: #009FC2;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  opacity: 0;
+  transition: 200ms;
+}
+
+.control {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 7px;
+  border: 1px solid #7D8082;
+  position: relative;
+}
+
+.checked:before {
+  opacity: 1;
+}
+
+.container.disabled .control {
+  border: 0.1em solid #dedede;
+}
+
+.container.disabled .content {
+  color: #dedede;
+}
+
+.content {
+  margin-bottom: 0.3rem;
+}

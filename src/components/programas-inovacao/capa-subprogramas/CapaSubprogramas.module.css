@@ -1,0 +1,167 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 76px;
+
+  @media screen(xl) {
+    max-width: 1366px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.sectionTop {
+  display: flex;
+  flex-direction: column;
+
+  @media screen(md) {
+    flex-direction: row;
+  }
+}
+
+.sectionLeft {
+  position: relative;
+  background: theme('colors.azulEscuro');
+  padding: 20px 25px 16px 20px;
+  order: 2;
+  max-width: 82%;
+  margin-top: -215px;
+  z-index: 200;
+
+  @media screen(md) {
+    width: 50%;
+    margin-top: initial;
+    order: 1;
+  }
+
+  @media screen(lg) {
+    width: 582px;
+    height: 512px;
+    padding: 93px 63px;
+    margin-bottom: 45px;
+  }
+}
+
+.textWrapper p {
+  @media screen(lg) {
+    letter-spacing: -0.03em;
+  }
+}
+
+.sectionRight {
+  order: 1;
+  z-index: 100;
+
+  @media screen(md) {
+    order: 2;
+    flex: 0 1 50%;
+  }
+
+  @media screen(lg) {
+    flex: 1 0;
+  }
+}
+
+.sectionBottom {
+  display: flex;
+  order: 3;
+  z-index: 0;
+
+  @media screen(xl) {
+    width: 100%;
+    margin-top: -158px;
+  }
+}
+
+.sectionBottom picture {
+  flex: 0 0 672px;
+}
+
+.info {
+  color: theme('colors.cinza.300');
+  padding: 24px 21px;
+  width: 100%;
+
+  @media screen(lg) {
+    padding: 52px 81px 52px 48px;
+  }
+}
+
+.info h5 {
+  margin-bottom: 4px;
+
+  @media screen(lg) {
+    margin-bottom: 10px;
+  }
+}
+
+.info>p {
+  margin-bottom: 16px;
+
+  @media screen(lg) {
+    margin-bottom: 6px;
+  }
+}
+
+.info>p:nth-child(2n) {
+  @media screen(lg) {
+    margin-bottom: 22px;
+  }
+}
+
+.info>p:nth-last-child(2) {
+  margin-bottom: 32px;
+}
+
+.cardWrapper {
+  display: flex;
+  min-width: 296px;
+  min-height: 104px;
+  flex-flow: column;
+  justify-content: center;
+  float: right;
+  padding: 16px 26px 23px 24px;
+
+  @media screen(xl) {
+    min-width: 410px;
+    min-height: 115px;
+    float: left;
+    margin-left: -161px;
+    margin-top: 48px;
+  }
+}
+
+.cardWrapper p {
+  margin-top: 0;
+}
+
+.textWrapper {
+  margin-top: 21px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+
+  @media screen(md) {
+    margin-top: 25px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.textWrapper h5 {
+  margin-bottom: 8px;
+}
+
+.imgBanner {
+  display: block;
+  height: 331px;
+  object-fit: cover;
+
+  @media screen(xs) {
+    height: 328px;
+  }
+
+  @media screen(sm) {
+    height: 408px;
+  }
+}

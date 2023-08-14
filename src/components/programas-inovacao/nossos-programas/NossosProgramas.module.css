@@ -1,0 +1,183 @@
+.wrapper {
+  margin: 0;
+
+  @media screen(xl) {
+    max-width: 1366px;
+    margin: 0 auto;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 37px;
+  position: relative;
+
+  @media screen(md) {
+    height: 512px;
+    flex-direction: row;
+    margin-bottom: 66px;
+  }
+
+  @media screen(xl) {
+    max-width: 1144px;
+    margin-left: auto;
+  }
+}
+
+.sectionLeft {
+  position: absolute;
+  background: theme('colors.azulEscuro');
+  padding: 37px 27px 16px 24px;
+  width: 212px;
+  z-index: 100;
+
+  @media screen(sm) {
+    position: static;
+    height: 185px;
+    max-width: 567px;
+    width: 70%;
+    padding: 71px 233px 22px 80px;
+    margin-top: initial;
+  }
+
+  @media screen(md) {
+    position: static;
+    height: 185px;
+    max-width: 567px;
+    width: 70%;
+    padding: 71px 233px 22px 65px;
+    margin-top: initial;
+  }
+
+  @media screen(lg) {
+    position: static;
+    height: 185px;
+    max-width: 567px;
+    width: 70%;
+    padding: 71px 233px 22px 40px;
+    margin-top: initial;
+  }
+}
+
+.sectionRight {
+  margin-top: 84px;
+  padding-left: 65px;
+  align-self: flex-end;
+  z-index: 0;
+
+  @media screen(sm) {
+    margin-top: -64px;
+    width: 562px;
+  }
+
+  @media screen(md) {
+    position: absolute;
+    right: 0;
+    align-self: unset;
+    justify-self: flex-end;
+    width: 51%;
+    height: 384px;
+    margin-top: 52px;
+    padding-left: 0;
+  }
+
+  @media screen(lg) {
+    width: 62%
+  }
+
+  @media screen(xl) {
+    width: 664px;
+  }
+}
+
+.title {
+  font-size: 2.4rem;
+  line-height: 3.4rem;
+  font-weight: 300;
+  color: theme('colors.branco');
+
+  @media screen(sm) {
+    margin-right: 12px;
+  }
+
+  @media screen(sm) {
+    font-size: 4rem;
+    line-height: 4.6rem;
+  }
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media screen(md) {
+    position: absolute;
+    left: 44px;
+    top: 209px;
+    width: 43%;
+    padding: 0 24px 0 21px;
+  }
+
+  @media screen(lg) {
+    width: 32%
+  }
+
+  @media screen(xl) {
+    padding-top: 24px;
+    width: 562px;
+    left: -95px;
+    top: 192px;
+  }
+}
+
+.textContainer {
+  min-width: 303px;
+  max-width: 367px;
+  color: theme('colors.cinza.300');
+  margin: 20px 0 0;
+
+  @media screen(sm) {
+    max-width: unset;
+  }
+
+  @media screen(md) {
+    max-width: 399px;
+    margin: 0;
+  }
+
+  @media screen(xl) {
+    padding-left: 113px;
+    max-width: 100%
+  }
+}
+
+.line {
+  padding: 10px 0 28px;
+  border-right: 1px solid theme('colors.azulEscuro');
+  border-bottom: 1px solid theme('colors.azulEscuro');
+  position: relative;
+  margin-top: -1px;
+}
+
+.line:after {
+  content: '';
+  width: 160px;
+  border-bottom: 1px solid theme('colors.azulEscuro');
+  position: absolute;
+  top: 0;
+  right: 0%;
+}
+
+.cardWrapper {
+  max-width: 242px;
+
+  @media screen(md) {
+    max-width: 360px;
+  }
+
+  @media screen(xl) {
+    padding: 16px 25px;
+  }
+}

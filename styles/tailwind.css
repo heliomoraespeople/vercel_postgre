@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-5xl font-extrabold;
+  }
+
+  h2 {
+    @apply text-4xl font-extrabold;
+  }
+
+  h3 {
+    @apply text-3xl font-extrabold
+  }
+
+  h4 {
+    @apply text-xl font-semibold;
+  }
+
+  h5 {
+    @apply text-lg font-extrabold;
+  }
+
+  @screen md {
+    h1 {
+      @apply text-5xldt font-extrabold;
+    }
+
+    h3 {
+      @apply text-xl font-extrabold;
+    }
+
+    h5 {
+      @apply text-lgdt font-extrabold;
+    }
+  }
+}
+
+.textbody01 {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+
+.textbody03 {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  .textbody01 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+}

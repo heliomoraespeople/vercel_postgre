@@ -1,0 +1,33 @@
+enum Responsabilidades {
+  DEIN = '(DEIN) Diretoria de estratégia, inovação e novos negócios',
+  COPR = '(COPR) Coordenação de gestão e projetos',
+  GEST = '(GEST) Gerência de Estratégia',
+  GEIN = '(GEIN) Gerência de Inovação',
+  GENN = '(GENN) Gerência de Novos Negócios',
+  GETD = '(GETD - Hub EDL) Energisa Digital Labs',
+  COPI = '(COPI) Coordenação de Prospecção de Inovação',
+  COGI = '(COGI) Coordenação de Gestão da Inovação',
+  COPD = '(COPD) Coordenação de Produtos Digitais',
+  COTD = '(COTD) Coordenação de Tecnologias Digitais',
+  CODS = '(CODS) Coordenação de Data Science',
+  CanaisParcerias = 'Canais e Parcerias',
+  GestaoPortfolio = 'Gestão de portfólio',
+  ContratosAuditoria = 'Contratos e Auditoria',
+  PagamentosCadastro = 'Pagamentos, Cadastro, NPS',
+  ComprasViagens = 'Compras, viagens e folha de ponto',
+  GestaoOrcamentaria = 'Gestão Orçamentária e Melhoria de Processos',
+  GestaoDesempenho = 'Gestão de desempenho e propriedade intelectual',
+  GestaoGovernanca = 'Gestão e Governança de Programas',
+  RelacionamentoEcossistema = 'Relacionamento com o Ecossistema',
+  RelacionamentoInterno = 'Relacionamento Interno',
+  GestaoProjetos = 'Gestão de Projetos',
+  OrcamentoGCP = 'Orçamento GEIN, CAPEX P&D e Propriedade Intelectual',
+  ENOVA = 'E-nova',
+  CoordenadorCOPR = 'Coordenador de gestão e projetos',
+  GerenteGEIN = 'Gerente de inovação',
+  GerenteGETD = 'Gerente Energisa Digital Labs',
+  CoordenadorCOPI = 'Coordenador de Prospecção de Inovação',
+  CoordenadorCOGI = 'Coordenador de Gestão da Inovação'
+}
+
+export default Responsabilidades;

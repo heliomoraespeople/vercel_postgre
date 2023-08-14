@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  gap: 16px;
+  max-width: 1096px;
+
+  @media screen(sm) {
+    margin: 0 auto;
+  }
+}
+
+.container--1 {
+  grid-template-columns: 1fr;
+  grid-template-areas: "high";
+}
+
+.container--2 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "mid1 mid2";
+}
+
+.container--2 div {
+  max-width: 540px;
+}
+
+.container--2 div+div {
+  grid-area: mid2;
+}
+
+.container--2 div+div p {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.container--3 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "high low1"
+    "high low2";
+}

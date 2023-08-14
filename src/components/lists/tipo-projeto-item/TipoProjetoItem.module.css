@@ -1,0 +1,152 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  color: theme('colors.cinza.300');
+  padding: 16px 4px 24px;
+  border-top: 1px solid #D8D8D8;
+
+  @media screen(lg) {
+    padding: 32px 24px 16px;
+    max-width: 1128px;
+    flex-flow: row;
+    margin-bottom: 32px;
+  }
+}
+
+.thumb {
+  position: relative;
+
+  @media screen(lg) {
+    flex: 1 0 347px;
+    }
+}
+
+.thumb img {
+  width: 188px;
+
+  @media screen(lg) {
+    width: 296px;
+  }
+}
+
+.genericWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media screen(xl) {
+    flex-direction: row;
+  }
+}
+
+.title {
+  position: absolute;
+  bottom: -8px;
+  left: 121px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 168px;
+  width: 168px;
+  height: 56px;
+  background-color: theme('colors.azulEscuro');
+  color: theme('colors.branco');
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-wrap: break-word;
+  padding: 0 28px;
+  text-align: center;
+
+  @media screen(lg) {
+    width: 206px;
+    height: 72px;
+    font-size: 2rem;
+    line-height: 2rem;
+    top: 120px;
+    padding: 0 35px;
+    text-align: center;
+  }
+}
+
+.title:nth-child() {
+  position: absolute;
+  bottom: -8px;
+  left: 121px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 168px;
+  width: 168px;
+  height: 56px;
+  background-color: theme('colors.azulEscuro');
+  color: theme('colors.branco');
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+
+  @media screen(lg) {
+    width: 206px;
+    height: 72px;
+    font-size: 2rem;
+    line-height: 2rem;
+    bottom: 0px;
+  }
+}
+
+
+
+.text {
+  margin-top: 18px;
+
+  @media screen(md) {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  @media screen(xl) {
+    flex: 1 0 274px;
+    margin-right: 26px;
+  }
+}
+
+.dataWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 12px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 400;
+  height: 32px;
+
+  @media screen(md) {
+    height: 53px;
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  @media screen(xl) {
+    margin-top: 18px;
+    flex: 1 0 396px;
+  }
+}
+
+.dataTitle {
+  font-weight: 700;
+
+  @media screen(md) {
+    font-size: 1.4rem;
+    min-height: 35.5px;
+  }
+}
+
+.buttonWrapper {
+  margin-top: 12px;
+  align-self: flex-start;
+}

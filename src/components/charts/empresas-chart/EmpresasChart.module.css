@@ -1,0 +1,94 @@
+.container {
+  position: relative;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: 700;
+  height: 100%;
+
+  @media screen(lg) {
+    width: 80%;
+  }
+
+  @media screen(xl) {
+    width: 100%;
+  }
+}
+
+.titleWrapper {
+  margin-bottom: 6px;
+  height: 12px;
+  margin-left: 6px;
+
+  @media screen(xl) {
+    margin-bottom: 4px;
+    height: 20px;
+    margin-left: 0;
+  }
+}
+
+.title {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: theme('colors.cinza.700');
+
+  @media screen(xl) {
+
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+}
+
+.numbers {
+  color: theme('colors.azulEscuro');
+}
+
+.label tspan {
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  @media screen(xl) {
+    font-size: 1.6rem;
+    line-height: 700;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.legendas {
+  display: grid;
+  position: absolute;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 12px 12px 12px 12px;
+  grid-auto-flow: column;
+  column-gap: 15px;
+  row-gap: 5.5px;
+  font-size: 0.98rem;
+  line-height: 1.2rem;
+  bottom: 0px;
+  left: 6px;
+
+  @media screen(xl) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 14px 14px;
+    column-gap: 33px;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    bottom: 10px;
+    left: 32px;
+  }
+}
+
+.square {
+  display: inline;
+  margin-right: 3px;
+  vertical-align: sub;
+}
+
+.legenda {
+  font-weight: 600;
+  display: inline;
+
+  @media screen(xl) {
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,200 @@
+@value dark-border: theme('colors.azulEscuro');
+@value light-border: theme('colors.azulBase');
+@value green-border: theme('colors.verde.100');
+
+.container {
+  display: none;
+  margin-top: 30px;
+
+  @media screen(lg) {
+    display: block;
+  }
+}
+
+.top {
+  width: 41.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.box {
+  position: relative;
+  height: 100px;
+  width: 100%;
+}
+
+.topic {
+  position: absolute;
+  z-index: 200;
+}
+
+.line {
+  height: auto;
+  position: absolute;
+  width: 2px;
+  border-left: 2px dashed;
+  right: -2px;
+  top: 56px;
+  bottom: -52px;
+}
+
+.boxGroup {
+  display: flex;
+  width: 314px;
+  position: absolute;
+  top: 100%;
+  transform: translate(-50%, 0);
+  padding-top: 15px;
+  border-top: 2px dashed;
+}
+
+.bottom {
+  display: flex;
+  width: 75%;
+  height: 200px;
+  padding-left: 80px;
+
+  @media screen(xl) {
+    padding-left: 313px;
+  }
+}
+
+/* regras para cada box */
+.box1 .topic {
+  right: -78px;
+}
+
+.box2 {
+  width: 368px;
+  height: 196px;
+}
+
+.box2:after {
+  content: ' ';
+  display: inline-block;
+  border-top: 2px dashed dark-border;
+  vertical-align: top;
+  position: absolute;
+  right: 0;
+  left: 78px;
+  top: 22px;
+  z-index: 0;
+}
+
+.box2 .line {
+  top: 56px;
+  bottom: 16px;
+}
+
+.box3,
+.box4 {
+  display: inline-block;
+  max-width: 257px;
+  min-width: 143px;
+  flex: 1 0;
+}
+
+.box4 .boxGroup {
+  border-color: light-border;
+}
+
+.box5 {
+  display: inline-block;
+  max-width: 250px;
+  min-width: 83px;
+  flex: 1 1;
+}
+
+.box6 {
+  width: 1px;
+}
+
+.box6 > .topic {
+  right: -68px;
+}
+
+.box6 .boxGroup {
+  border-color: green-border;
+}
+
+.box12 {
+  width: unset;
+}
+
+/* especificizações */
+.bottom .box {
+  height: 75px;
+}
+
+.bottom .box:before {
+  content: '';
+  display: inline-block;
+  border-top: 2px dashed dark-border;
+  vertical-align: top;
+  position: absolute;
+  right: 3px;
+  left: 0;
+  top: -16px;
+}
+
+.bottom .line {
+  border-left: 2px dashed;
+  left: -2px;
+  top: -15px;
+  bottom: 65px;
+}
+
+.bottom .topic {
+  width: 136px;
+  height: 56px;
+  left: -68px;
+}
+
+.boxGroup .topic {
+  width: 144px;
+  left: -72px;
+}
+
+.boxGroup .box {
+  max-width: 156px;
+}
+
+.boxGroup .box:before {
+  content: unset;
+}
+
+.boxGroup .line {
+  left: 0;
+}
+
+.boxGroup .box:nth-child(2n) .line {
+  top: -36px;
+}
+
+/* linhas */
+.lineDark,
+.bottom .lineDark {
+  border-color: dark-border;
+}
+
+.bottom .lineLight {
+  border-color: light-border;
+}
+
+.bottom .lineGreen {
+  border-color: green-border;
+}
+
+.resetFilter {
+  padding: 0 45px;
+}
+
+.resetFilter button {
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  text-decoration-line: underline;
+
+  color: theme('colors.azulEscuro88');
+}

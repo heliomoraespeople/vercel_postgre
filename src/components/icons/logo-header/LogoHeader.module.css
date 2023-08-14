@@ -1,0 +1,21 @@
+.container {
+  cursor: pointer;
+  width: 112px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 5px;
+  transition: 0.5s;
+
+  @media screen(xl) {
+    width: unset;
+    box-shadow: none;
+  }
+}
+
+[class*='active'] .container {
+  box-shadow: none;
+  background: transparent;
+}

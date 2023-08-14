@@ -1,0 +1,28 @@
+.programas-text-info {
+  margin-bottom: 46px;
+
+  @media screen(lg) {
+    
+  }
+}
+
+.programas-text-info p:nth-child(odd) {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+
+  @media screen(lg) {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
+
+.programas-text-info p:nth-child(even) {
+  margin-bottom: 16px;
+
+  @media screen(lg) {
+    margin-bottom: 40px;
+  }
+}

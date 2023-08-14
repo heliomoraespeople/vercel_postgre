@@ -1,0 +1,132 @@
+.container {
+  margin-bottom: 72px;
+  position: relative;
+
+  @media screen(lg) {
+    display: flex;
+    margin: 152px 0 60px;
+  }
+}
+
+.content {
+  background-color: rgba(0, 81, 116, 0.88);
+  padding: 47px 21px 139px;
+
+  @media screen(lg) {
+    width: 673px;
+    min-height: 384px;
+    padding: 32px 235px 30px 36px
+  }
+}
+
+.title {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+
+  @media screen(lg) {
+    font-size: 2.8rem;
+    line-height: 3.4rem;
+  }
+}
+
+.subtitle {
+  max-width: 264px;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+
+  @media screen(lg) {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin-bottom: 20px;
+  }
+}
+
+.text p {
+  margin-bottom: 4px;
+
+  @media screen(lg) {
+    margin-bottom: 10px;
+  }
+}
+
+.text p:last-child {
+  margin-bottom: 22px;
+}
+
+.images {
+  max-width: 360px;
+  position: absolute;
+  bottom: 127px;
+  width: 312px;
+  right: 21px;
+
+  @media screen(lg) {
+    width: 620px;
+    max-width: unset;
+    position: absolute;
+    top: 0;
+    bottom: unset;
+    right: 0;
+  }
+}
+
+.image {
+  position: absolute;
+}
+
+.image--0 {
+  width: 223px;
+  right: -21px;
+  object-fit: fill;
+
+  @media screen(lg) {
+    object-fit: fill;
+    width: 520px;
+    top: -122px;
+    right: 0;
+  }
+
+  @media screen(xl) {
+    width: 616px;
+    height: 484px;
+    object-fit: fill;
+    top: -150px;
+  }
+}
+
+.image--1 {
+  display: none;
+  width: 126px;
+  top: -10px;
+  object-fit: fill;
+
+  @media screen(lg) {
+    width: 224px;
+    top: 47px;
+    left: 37px;
+  }
+
+  @media screen(xl) {
+    left: -107px;
+  }
+}
+
+.image--2 {
+  display: none;
+  width: 126px;
+  bottom: -193px;
+  left: 10px;
+  object-fit: fill;
+
+  @media screen(lg) {
+    width: 364px;
+    bottom: unset;
+    left: unset;
+    right: 60px;
+    top: 185px;
+  }
+}

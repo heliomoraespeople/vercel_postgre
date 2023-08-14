@@ -1,0 +1,141 @@
+.container {
+  margin-top: 100px;
+  padding-top: 25px;
+
+  @media screen(lg) {
+    display: grid;
+    grid-template-columns: 1fr 270px 1fr;
+    margin-top: 150px;
+  }
+
+  @media screen (xl) {
+    margin-top: 60px;
+    margin-left: 6.5%;
+    grid-template-columns: 1fr 310px 1fr;
+  }
+
+  @media (min-width: 1368px) {
+    max-width: 1366px;
+    margin: 150px auto 60px;
+  }
+}
+
+.sectionLeft {
+  background-color: theme('colors.azulEscuro');
+  padding: 40px 16px 237px;
+
+  @media screen(lg) {
+    padding: 40px 310px 56px 64px;
+    grid-column: 1/3;
+    grid-row: 1/1;
+  }
+
+  @media screen(xl) {
+    /* padding: 40px 310px 56px 64px; */
+    padding: 40px 220px 56px 64px;
+  }
+}
+
+.sectionLeft div+div {
+  margin-top: 24px;
+
+  @media screen(lg) {
+    margin-top: 32px;
+  }
+}
+
+.title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @media screen(md) {
+    font-size: 40px;
+    line-height: 46px;
+  }
+}
+
+.title span {
+  color: #F0F8FA;
+  font-weight: 300;
+}
+
+.paragraph {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  margin: 8px 0 24px;
+
+  @media screen(md) {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 16px 0 32px;
+  }
+}
+
+.sectionRight {
+  margin-top: -220px;
+
+  @media screen(lg) {
+    grid-column: 2/4;
+    grid-row: 1/1;
+    margin-top: -60px;
+    justify-self: end;
+  }
+}
+
+.sectionRight img {
+  max-width: 232px;
+  margin-right: 0;
+  margin-left: auto;
+
+  @media screen(sm) {
+    max-width: 350px;
+  }
+
+  @media screen(md) {
+    max-width: 432px;
+  }
+
+  @media screen(lg) {
+    margin-left: 15px;
+    max-width: initial;
+  }
+
+  @media screen(xl) {
+    margin-left: 30px;
+  }
+}
+
+.team {
+  background-color: theme('colors.azulBase');
+  max-width: 320px;
+  padding: 16px 42px 24px 24px;
+  margin-right: 0;
+  margin-left: auto;
+  margin-top: -30px;
+  position: relative;
+  z-index: 2;
+
+  @media screen(sm) {
+    max-width: 530px;
+    margin-top: -125px;
+  }
+
+  @media screen(md) {
+    max-width: 630px;
+    margin-top: -125px;
+  }
+
+  @media screen(lg) {
+    max-width: 530px;
+    padding: 27px 55px 29px 45px;
+    margin-top: -84px;
+    margin-left: 0;
+  }
+}
+
+.team h4::before {
+  display: none;
+}

@@ -1,0 +1,156 @@
+@value laranja-base: theme('colors.laranja');
+@value azul-escuro: theme('colors.azulEscuro');
+@value azul-base: theme('colors.azulBase');
+@value verde-citrico: theme('colors.verdeCitrico');
+@value verde-agua: theme('colors.verde.100');
+@value cinza-200: theme('colors.cinza.200');
+
+.container {
+  display: inline-flex;
+  position: relative;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  max-width: 156px;
+  max-height: 56px;
+  border: 2px solid cinza-200;
+  color: cinza-200;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  font-weight: 700;
+  background-color: white;
+  z-index: 100;
+}
+
+.azulEscuro {
+  border-color: azul-escuro;
+  color: azul-escuro;
+}
+
+.azulBase {
+  border-color: azul-base;
+  color: azul-base;
+}
+
+.laranja {
+  border-color: laranja-base;
+  color: laranja-base;
+}
+
+.verdeCitrico {
+  border-color: verde-citrico;
+  color: verde-citrico;
+}
+
+.verdeAgua {
+  border-color: verde-agua;
+  color: verde-agua;
+}
+
+.active {
+  color: white;
+}
+
+.active.container {
+  background-color: cinza-200;
+}
+
+.active.azulBase {
+  background-color: azul-base;
+}
+
+.active.azulEscuro {
+  background-color: azul-escuro;
+}
+
+.active.verdeCitrico {
+  background-color: verde-citrico;
+}
+
+.active.laranja {
+  background-color: laranja-base;
+}
+
+.active.verdeAgua {
+  background-color: verde-agua;
+}
+
+.collapisingButton:hover:not(.collapsedButton),
+.container:hover:not(.active) {
+  background-color: #e6f6f9;
+}
+
+.collapisingButton {
+  position: absolute;
+  display: flex;
+  width: 20px;
+  height: 16px;
+  justify-content: center;
+  border: 2px solid theme('colors.cinza.200');
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: -8px;
+  background: white;
+  z-index: 200;
+}
+
+.collapisingButton:before {
+  content: ' ';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid theme('colors.cinza.200');
+  border-bottom: 2px solid theme('colors.cinza.200');
+  transform: rotate(45deg);
+}
+
+.collapsedButton {
+  background-color: theme('colors.cinza.200');
+  align-items: center;
+}
+
+.collapsedButton:before {
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-135deg);
+}
+
+.subFiltersContainer {
+  display: grid;
+  position: absolute;
+  width: 448px;
+  left: -53px;
+  background: #ffffff;
+  border: 2px solid theme('colors.cinza.200');
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 18px 0 10px 14px;
+  top: 91%;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 32px 32px 1fr;
+  align-items: flex-start;
+  grid-auto-flow: column;
+
+  @media screen(xl) {
+    left: unset;
+    transform: translate(50%);
+    right: 50%;
+  }
+}
+
+.variation {
+  width: 272px;
+  grid-template-columns: 1fr;
+}
+
+.subFiltersContainer label p {
+  color: theme('colors.cinza.200')
+}

@@ -1,0 +1,26 @@
+.container {
+  padding: 16px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  max-width: 292px;
+  float: right;
+
+  @media screen(sm) {
+    max-width: 387px;
+  }
+
+  @media screen(md) {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+}
+
+.light {
+  background: theme('colors.azulClaro');
+  color: theme('colors.cinza.300');
+}
+
+.dark {
+  background: theme('colors.azulEscuro');
+  color: theme('colors.branco');
+}

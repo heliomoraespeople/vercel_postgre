@@ -1,0 +1,19 @@
+.cta {
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: theme('colors.cinza.200');
+}
+
+.cta--lg {
+  padding: 10px 16px;
+}
+
+.cta--sm {
+  min-height: 40px;
+  min-width: 257px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}

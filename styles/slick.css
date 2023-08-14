@@ -1,0 +1,48 @@
+.slick-slider {
+  max-width: 1190px;
+}
+
+.slick-prev svg {
+  transform: rotate(180deg);
+}
+
+.slick-disabled {
+  filter: grayscale(1);
+  opacity: 0.3;
+}
+
+.slick-dots {
+  bottom: -35px !important;
+
+  @media screen(lg) {
+    bottom: -45px !important;
+  }
+}
+
+.slick-dots--digilabs {
+  @media screen(lg) {
+    bottom: 27px !important;
+  }
+}
+
+.slick-dots--projetos {
+  bottom: -5px !important;
+
+  @media screen(lg) {
+    padding-left: 117px !important;
+  }
+}
+
+.slick-dots li {
+  margin: unset !important;
+}
+
+.slick-dots li button:before {
+  font-size: 14px !important;
+  opacity: 1 !important;
+  color: theme('colors.cinza.500') !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #009FC2 !important;
+}

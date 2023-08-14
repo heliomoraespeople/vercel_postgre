@@ -1,0 +1,17 @@
+.container {
+  display: none;
+  position: absolute;
+  top: 16px;
+  left: 17px;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+
+  @media screen(lg) {
+    display: block
+  }
+}
+
+.container img {
+  display: inline;
+  margin-right: 5px;
+}

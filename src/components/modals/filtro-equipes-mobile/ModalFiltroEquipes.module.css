@@ -1,0 +1,26 @@
+.container {
+  padding-top: 1px;
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.headerWrapper p {
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: theme('colors.cinza.400');
+}
+
+.resetFilter button {
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  text-decoration-line: underline;
+
+  color: theme('colors.azulEscuro88');
+}
