@@ -29,6 +29,8 @@
     "@azure/msal-browser": "^2.31.0",
     "@azure/msal-react": "^1.4.10",
     "@vercel/postgres": "^0.4.1",
+    "axios": "^1.4.0",
+    "fs": "^0.0.1-security",
     "hamburger-react": "^2.5.0",
     "next": "^12.3.0",
     "react": "^18.2.0",
@@ -36,6 +38,7 @@
     "react-modal": "^3.16.1",
     "react-slick": "^0.29.0",
     "recharts": "^2.5.0",
+    "sharp": "^0.32.5",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
