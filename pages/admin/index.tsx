@@ -116,17 +116,16 @@ const Admin: FC = () => {
     });
   };
 
-
   const handleDeleteNews = async (): Promise<void> => {
     if (!selectedNews) {
       console.error('Nenhuma notícia selecionada para exclusão.');
       return;
     }
-  
+
     const body = {
-      id: selectedNews.titulo, // Você precisa enviar o ID da notícia para exclusão
+      id: selectedNews.titulo // Você precisa enviar o ID da notícia para exclusão
     };
-  
+
     try {
       const response = await axios.post('/api/noticias/delete-news', body);
       console.log(response);
@@ -140,19 +139,19 @@ const Admin: FC = () => {
       console.error(error);
     }
   };
-  
 
   return (
     <div>
       <h1>Admin</h1>
       <div>TITLE</div>
-      <ul>
+      <select onChange={handleNewsClick}>
+        <option value="">Selecione uma notícia</option>
         {noticias.map((noticia, index) => (
-          <li key={index} onClick={() => handleNewsClick(noticia)}>
+          <option key={index} value={noticia.title}>
             {noticia.title}
-          </li>
+          </option>
         ))}
-      </ul>
+      </select>
       {selectedNews && (
         <div>
           <h2>Notícia Selecionada</h2>
