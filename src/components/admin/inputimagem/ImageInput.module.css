@@ -1,0 +1,14 @@
+.buttonSend {
+  padding: 6px 6px;
+  margin-top: 8px;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: theme('colors.cinza.200');
+  background: #c2cd23;
+}
+
+.buttonSend:hover {
+  background: #e3ee41;
+}

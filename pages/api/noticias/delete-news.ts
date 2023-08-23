@@ -10,7 +10,7 @@ export default async function deleteNews(request, response) {
     await client.query(
       `
       DELETE FROM News
-      WHERE TITLE = $1;
+      WHERE ID = $1;
     `,
       [id]
     );

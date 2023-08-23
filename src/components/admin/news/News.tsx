@@ -1,0 +1,271 @@
+import { FC, useState, useEffect } from 'react';
+import axios from 'axios';
+import styles from './News.module.css';
+import ImageInput from '../inputimagem/ImageInput';
+
+const News: FC = () => {
+  const [titleNews, setTitleNews] = useState<string>('');
+  const [abstractNews, setAbstractNews] = useState<string>('');
+  const [linkNews, setLinkNews] = useState<string>('');
+  const [imageBlob, setImageBlob] = useState<Blob | undefined>();
+  const [noticias, setNoticias] = useState([]);
+  const [selectedNews, setSelectedNews] = useState<any>(null);
+
+  useEffect(() => {
+    getNoticias();
+  }, []);
+
+  const getNoticias = async () => {
+    try {
+      const response = await axios.get('/api/noticias/get-news');
+      const noticiasDecodificadas = response.data.map(noticia => ({
+        ...noticia,
+        image: `${atob(noticia.image)}`
+      }));
+      setNoticias(noticiasDecodificadas);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleNewsClick = (selectedId: number): void => {
+    if (selectedId) {
+      // Certifique-se de que selectedId seja um número
+      const idSelecionado = Number(selectedId);
+
+      const news = noticias.find(noticia => noticia.id === idSelecionado);
+
+      if (news) {
+        setSelectedNews(news);
+      } else {
+        console.log('Nenhuma notícia encontrada com o ID', idSelecionado);
+      }
+    } else {
+      setSelectedNews(null);
+    }
+  };
+
+  const handleEditNews = async (): Promise<void> => {
+    if (!selectedNews) {
+      console.error('Nenhuma notícia selecionada para edição.');
+      return;
+    }
+
+    if (!imageBlob) {
+      console.error('Selecione uma imagem antes de enviar.');
+      return;
+    }
+
+    const imageBase64 = await convertBlobToBase64(imageBlob);
+
+    const body = {
+      id: selectedNews.id, // Você precisa enviar o ID da notícia para atualização
+      title: titleNews,
+      abstract: abstractNews,
+      link: linkNews,
+      image: imageBase64
+    };
+
+    try {
+      const response = await axios.post('/api/noticias/update-news', body);
+      console.log(response);
+      // Limpar os campos de edição após a atualização bem-sucedida
+      setSelectedNews(null);
+      setTitleNews('');
+      setAbstractNews('');
+      setLinkNews('');
+      setImageBlob(undefined);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handlePost = async (
+    event: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
+    event.preventDefault(); // Evita o comportamento padrão de enviar o formulário
+
+    if (!imageBlob) {
+      console.error('Selecione uma imagem antes de enviar.');
+      return;
+    }
+
+    const imageBase64 = await convertBlobToBase64(imageBlob);
+
+    const body = {
+      title: titleNews,
+      abstract: abstractNews,
+      link: linkNews,
+      imageBase64: imageBase64
+    };
+
+    try {
+      const response = await axios.post('/api/noticias/post-news', body);
+      console.log(response);
+      // Limpar os campos após o envio bem-sucedido
+      setTitleNews('');
+      setAbstractNews('');
+      setLinkNews('');
+      setImageBlob(undefined);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleImageSelected = (imageBlob: Blob) => {
+    setImageBlob(imageBlob);
+  };
+
+  const convertBlobToBase64 = (blob: Blob): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const base64String = reader.result as string;
+        resolve(base64String);
+      };
+      reader.onerror = error => {
+        reject(error);
+      };
+      reader.readAsDataURL(blob);
+    });
+  };
+
+  const handleDeleteNews = async (): Promise<void> => {
+    if (!selectedNews) {
+      console.error('Nenhuma notícia selecionada para exclusão.');
+      return;
+    }
+
+    const body = {
+      id: selectedNews.id // Você precisa enviar o ID da notícia para exclusão
+    };
+
+    try {
+      const response = await axios.post('/api/noticias/delete-news', body);
+      console.log(response);
+      // Limpar os campos após a exclusão bem-sucedida
+      setSelectedNews(null);
+      setTitleNews('');
+      setAbstractNews('');
+      setLinkNews('');
+      setImageBlob(undefined);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return (
+    <div className={styles.container}>
+      <div>
+        <div className={styles.selectNews}>
+          <select onChange={event => handleNewsClick(event.target.value)}>
+            <option value="">Selecione uma notícia</option>
+            {noticias.map((noticia, index) => (
+              <option key={index} value={noticia.id}>
+                {noticia.title}
+              </option>
+            ))}
+          </select>
+        </div>
+        {selectedNews ? (
+          <div>
+            <div className={styles.form}>
+              <div className={styles.formLeft}>
+                <label htmlFor="TitleNews">
+                  <p className={styles.formTitle}>Título da Notícia</p>
+                  <input
+                    type="text"
+                    id="TitleNews"
+                    className={styles.formInput}
+                    defaultValue={selectedNews?.title ? selectedNews.title : ''}
+                    onChange={e => setTitleNews(e.target.value)}
+                  />
+                </label>
+                <label htmlFor="AbstractNews">
+                  <p className={styles.formTitle}>Subtítulo da Notícia</p>
+                  <input
+                    type="text"
+                    id="AbstractNews"
+                    className={styles.formInput}
+                    defaultValue={selectedNews?.abstract ? selectedNews.abstract : ''}
+                    onChange={e => setAbstractNews(e.target.value)}
+                  />
+                </label>
+                <label htmlFor="LinkNews">
+                  <p className={styles.formTitle}>Link da Notícia</p>
+                  <input
+                    type="text"
+                    id="LinkNews"
+                    className={styles.formInput}
+                    defaultValue={selectedNews?.link ? selectedNews.link : ''}
+                    onChange={e => setLinkNews(e.target.value)}
+                  />
+                </label>
+              </div>
+              <label htmlFor="ImageNews">
+                <p className={styles.formTitle}>Imagem da Notícia</p>
+                <ImageInput
+                  onImageSelected={handleImageSelected}
+                  image={selectedNews?.image ? selectedNews.image : ''}
+                />
+              </label>
+            </div>
+            <div className={styles.buttons}>
+              <button className={styles.buttonDel} onClick={handleDeleteNews}>
+                EXCLUIR NOTICIA
+              </button>
+              <button className={styles.buttonEdit} onClick={handleEditNews}>
+                ALTERAR NOTICIA
+              </button>
+            </div>
+          </div>
+        ) : (
+          <form onSubmit={handlePost}>
+            <div className={styles.form}>
+              <div className={styles.formLeft}>
+                <label htmlFor="TitleNews">
+                  <p className={styles.formTitle}>Título da Notícia</p>
+                  <input
+                    type="text"
+                    id="TitleNews"
+                    className={styles.formInput}
+                    onChange={e => setTitleNews(e.target.value)}
+                  />
+                </label>
+                <label htmlFor="AbstractNews">
+                  <p className={styles.formTitle}>Subtítulo da Notícia</p>
+                  <input
+                    type="text"
+                    id="AbstractNews"
+                    className={styles.formInput}
+                    onChange={e => setAbstractNews(e.target.value)}
+                  />
+                </label>
+                <label htmlFor="LinkNews">
+                  <p className={styles.formTitle}>Link da Notícia</p>
+                  <input
+                    type="text"
+                    id="LinkNews"
+                    className={styles.formInput}
+                    onChange={e => setLinkNews(e.target.value)}
+                  />
+                </label>
+              </div>
+              <label htmlFor="ImageNews">
+                <p className={styles.formTitle}>Imagem da Notícia</p>
+                <ImageInput onImageSelected={handleImageSelected} />
+              </label>
+            </div>
+            <div className={styles.buttons}>
+              <button type="submit" className={styles.buttonAdd}>
+                ADICIONAR NOVA
+              </button>
+            </div>
+          </form>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default News;
