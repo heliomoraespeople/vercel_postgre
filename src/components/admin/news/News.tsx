@@ -28,7 +28,7 @@ const News: FC = () => {
     }
   };
 
-  const handleNewsClick = (selectedId: number): void => {
+  const handleNewsClick = (selectedId: string): void => {
     if (selectedId) {
       // Certifique-se de que selectedId seja um número
       const idSelecionado = Number(selectedId);
