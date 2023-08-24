@@ -3,7 +3,7 @@ import axios from 'axios';
 import styles from './News.module.css';
 import ImageInput from '../inputimagem/ImageInput';
 
-const News: FC = () => {
+const Team: FC = () => {
   const [titleNews, setTitleNews] = useState<string>('');
   const [abstractNews, setAbstractNews] = useState<string>('');
   const [linkNews, setLinkNews] = useState<string>('');
@@ -360,4 +360,4 @@ const News: FC = () => {
   );
 };
 
-export default News;
+export default Team;

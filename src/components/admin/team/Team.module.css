@@ -1,0 +1,98 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selectNews {
+  margin: 8px;
+  display: flex;
+  justify-content: center;
+
+  select {
+    padding: 6px;
+    border-radius: 4px;
+    border: solid 1px #005174;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+
+  .buttonAdd {
+    padding: 16px 6px;
+    margin: 8px;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: theme('colors.cinza.200');
+    background: #c2cd23;
+  }
+
+  .buttonAdd:hover {
+    background: #e3ee41;
+  }
+
+  .buttonDel {
+    padding: 16px 6px;
+    margin: 8px;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: theme('colors.cinza.200');
+    background: #f37021;
+  }
+
+  .buttonDel:hover {
+    background: #f38550;
+  }
+
+  .buttonEdit {
+    padding: 16px 6px;
+    margin: 8px;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: #005174;
+  }
+
+  .buttonEdit:hover {
+    background: #009fc2;
+  }
+}
+
+.form {
+  width: fit-content;
+  display: flex;
+  border-radius: 16px;
+  border: solid 1px #005174;
+  padding: 20px;
+
+  label {
+    margin: 8px;
+  }
+
+  .formLeft {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formTitle {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .formInput {
+    padding: 6px;
+    border-radius: 4px;
+    border: solid 1px #005174;
+  }
+}
