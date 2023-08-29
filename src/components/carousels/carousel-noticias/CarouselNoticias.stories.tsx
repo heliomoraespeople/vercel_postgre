@@ -13,10 +13,10 @@ const Template: ComponentStory<typeof CarouselNoticias> = args => (
   <CarouselNoticias {...args} />
 );
 
-export const Mobile = Template.bind({});
-Mobile.args = {
-  ...CarouselNoticiasData.mobile
-};
+// export const Mobile = Template.bind({});
+// Mobile.args = {
+//   ...CarouselNoticiasData.mobile
+// };
 
 export const Desktop = Template.bind({});
 Desktop.args = {
