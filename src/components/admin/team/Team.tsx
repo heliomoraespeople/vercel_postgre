@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from './News.module.css';
+import styles from './Team.module.css';
 import ImageInput from '../inputimagem/ImageInput';
 
 const Team: FC = () => {

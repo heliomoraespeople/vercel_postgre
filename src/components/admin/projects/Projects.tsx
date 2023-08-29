@@ -1,23 +1,29 @@
 import { FC, useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from './News.module.css';
+import styles from './Projects.module.css';
 import ImageInput from '../inputimagem/ImageInput';
 
 const Projects: FC = () => {
-  const [titleNews, setTitleNews] = useState<string>('');
-  const [abstractNews, setAbstractNews] = useState<string>('');
-  const [linkNews, setLinkNews] = useState<string>('');
-  const [autorNews, setAutorNews] = useState<string>('');
-  const [stateNews, setStateNews] = useState<string>('');
-  const [dateNews, setDateNews] = useState<string>('');
-  const [textNews, setTextNews] = useState<string>('');
+  const [projectName, setProjectName] = useState<string>('');
+  const [projectType, setProjectType] = useState<string>('');
+  const [projectInvestment, setProjectInvestment] = useState<string>('');
+  const [projectStatus, setProjectStatus] = useState<string>('');
+  const [projectArea, setProjectArea] = useState<string>('');
+  const [projectOwner, setProjectOwner] = useState<string>('');
+  const [approvalYear, setApprovalYear] = useState<string>('');
+  const [implementationYear, setImplementationYear] = useState<string>('');
+  const [projectCompany, setProjectCompany] = useState<string>('');
+  const [projectDescription, setProjectDescription] = useState<string>('');
+  const [projectResults, setProjectResults] = useState<string>('');
   const [imageBlob, setImageBlob] = useState<Blob | undefined>();
   const [noticias, setNoticias] = useState([]);
-  const [selectedNews, setSelectedNews] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
 
   useEffect(() => {
     getNoticias();
   }, []);
+
+  console.log(implementationYear, projectCompany, projectDescription, projectResults)
 
   const getNoticias = async () => {
     try {
@@ -39,14 +45,18 @@ const Projects: FC = () => {
       const news = noticias.find(noticia => noticia.id === idSelecionado);
 
       if (news) {
-        setTitleNews(news.title);
-        setAbstractNews(news.abstract);
-        setAutorNews(news.autor);
-        setStateNews(news.state);
-        setDateNews(news.date);
-        setTextNews(news.text);
-        setLinkNews(news.link);
-        setSelectedNews(news);
+        setProjectName(news.title);
+        setProjectType(news.abstract);
+        setProjectStatus(news.autor);
+        setProjectArea(news.state);
+        setProjectOwner(news.date);
+        setApprovalYear(news.text);
+        setImplementationYear(news.implementationYear);
+        setProjectCompany(news.projectCompany);
+        setProjectDescription(news.projectDescription);
+        setProjectResults(news.projectResults);
+        setProjectInvestment(news.link);
+        setSelectedProject(news);
 
         console.log(selectedId);
         console.log(news);
@@ -54,24 +64,24 @@ const Projects: FC = () => {
         console.log('Nenhuma notícia encontrada com o ID', idSelecionado);
       }
     } else {
-      setSelectedNews(null);
+      setSelectedProject(null);
     }
   };
 
   const handleEditNews = async (): Promise<void> => {
     const imageBase64 = imageBlob
       ? await convertBlobToBase64(imageBlob)
-      : selectedNews.image;
+      : selectedProject.image;
 
     const body = {
-      id: selectedNews.id,
-      title: titleNews,
-      abstract: abstractNews,
-      link: linkNews,
-      autor: autorNews,
-      state: stateNews,
-      date: dateNews,
-      text: textNews,
+      id: selectedProject.id,
+      title: projectName,
+      abstract: projectType,
+      link: projectInvestment,
+      autor: projectStatus,
+      state: projectArea,
+      date: projectOwner,
+      text: approvalYear,
       image: imageBase64
     };
 
@@ -98,13 +108,13 @@ const Projects: FC = () => {
     const imageBase64 = await convertBlobToBase64(imageBlob);
 
     const body = {
-      title: titleNews,
-      abstract: abstractNews,
-      link: linkNews,
-      autor: autorNews,
-      state: stateNews,
-      date: dateNews,
-      text: textNews,
+      title: projectName,
+      abstract: projectType,
+      link: projectInvestment,
+      autor: projectStatus,
+      state: projectArea,
+      date: projectOwner,
+      text: approvalYear,
       image: imageBase64
     };
 
@@ -137,13 +147,13 @@ const Projects: FC = () => {
   };
 
   const handleDeleteNews = async (): Promise<void> => {
-    if (!selectedNews) {
+    if (!selectedProject) {
       console.error('Nenhuma notícia selecionada para exclusão.');
       return;
     }
 
     const body = {
-      id: selectedNews.id
+      id: selectedProject.id
     };
 
     try {
@@ -157,14 +167,14 @@ const Projects: FC = () => {
   };
 
   const cleanNews = (): void => {
-    setSelectedNews(null);
-    setTitleNews('');
-    setAbstractNews('');
-    setAutorNews('');
-    setStateNews('');
-    setDateNews('');
-    setTextNews('');
-    setLinkNews('');
+    setSelectedProject(null);
+    setProjectName('');
+    setProjectType('');
+    setProjectStatus('');
+    setProjectArea('');
+    setProjectOwner('');
+    setApprovalYear('');
+    setProjectInvestment('');
     setImageBlob(undefined);
   };
 
@@ -173,7 +183,7 @@ const Projects: FC = () => {
       <div>
         <div className={styles.selectNews}>
           <select onChange={event => handleNewsClick(event.target.value)}>
-            <option value="">Selecione uma notícia</option>
+            <option value="">Selecione um projeto</option>
             {noticias.map((noticia, index) => (
               <option key={index} value={noticia.id}>
                 {noticia.title}
@@ -181,70 +191,70 @@ const Projects: FC = () => {
             ))}
           </select>
         </div>
-        {selectedNews ? (
+        {selectedProject ? (
           <div>
             <div className={styles.form}>
               <div className={styles.formLeft}>
-                <label htmlFor="TitleNews">
+                <label htmlFor="projectName">
                   <p className={styles.formTitle}>Título da Notícia</p>
                   <input
                     type="text"
-                    id="TitleNews"
+                    id="projectName"
                     className={styles.formInput}
-                    value={titleNews}
-                    onChange={e => setTitleNews(e.target.value)}
+                    value={projectName}
+                    onChange={e => setProjectName(e.target.value)}
                   />
                 </label>
-                <label htmlFor="AbstractNews">
+                <label htmlFor="projectType">
                   <p className={styles.formTitle}>Subtítulo da Notícia</p>
                   <input
                     type="text"
-                    id="AbstractNews"
+                    id="projectType"
                     className={styles.formInput}
-                    value={abstractNews}
-                    onChange={e => setAbstractNews(e.target.value)}
+                    value={projectType}
+                    onChange={e => setProjectType(e.target.value)}
                   />
                 </label>
-                <label htmlFor="AutorNews">
+                <label htmlFor="projectStatus">
                   <p className={styles.formTitle}>Autor da Notícia</p>
                   <input
                     type="text"
-                    id="AutorNews"
+                    id="projectStatus"
                     className={styles.formInput}
-                    value={autorNews}
-                    onChange={e => setAutorNews(e.target.value)}
+                    value={projectStatus}
+                    onChange={e => setProjectStatus(e.target.value)}
                   />
                 </label>
-                <label htmlFor="StateNews">
+                <label htmlFor="projectArea">
                   <p className={styles.formTitle}>Veículo de Mídia</p>
                   <input
                     type="text"
-                    id="StateNews"
+                    id="projectArea"
                     className={styles.formInput}
-                    value={stateNews}
-                    onChange={e => setStateNews(e.target.value)}
+                    value={projectArea}
+                    onChange={e => setProjectArea(e.target.value)}
                   />
                 </label>
-                <label htmlFor="DateNews">
+                <label htmlFor="projectOwner">
                   <p className={styles.formTitle}>Data da Notícia</p>
                   <input
                     type="text"
-                    id="DateNews"
+                    id="projectOwner"
                     className={styles.formInput}
-                    value={dateNews}
-                    onChange={e => setDateNews(e.target.value)}
+                    value={projectOwner}
+                    onChange={e => setProjectOwner(e.target.value)}
                   />
                 </label>
-                <label htmlFor="TextNews">
+                <label htmlFor="approvalYear">
                   <p className={styles.formTitle}>
                     Texto Complementar da Notícia
                   </p>
                   <input
                     type="text"
-                    id="TextNews"
+                    id="approvalYear"
                     className={styles.formInput}
-                    value={textNews}
-                    onChange={e => setTextNews(e.target.value)}
+                    value={approvalYear}
+                    onChange={e => setApprovalYear(e.target.value)}
                   />
                 </label>
                 <label htmlFor="LinkNews">
@@ -253,8 +263,8 @@ const Projects: FC = () => {
                     type="text"
                     id="LinkNews"
                     className={styles.formInput}
-                    value={linkNews}
-                    onChange={e => setLinkNews(e.target.value)}
+                    value={projectInvestment}
+                    onChange={e => setProjectInvestment(e.target.value)}
                   />
                 </label>
               </div>
@@ -262,7 +272,7 @@ const Projects: FC = () => {
                 <p className={styles.formTitle}>Imagem da Notícia</p>
                 <ImageInput
                   onImageSelected={handleImageSelected}
-                  image={selectedNews?.image ? selectedNews.image : ''}
+                  image={selectedProject?.image ? selectedProject.image : ''}
                 />
               </label>
             </div>
@@ -279,22 +289,22 @@ const Projects: FC = () => {
           <form onSubmit={handlePost}>
             <div className={styles.form}>
               <div className={styles.formLeft}>
-                <label htmlFor="TitleNews">
+                <label htmlFor="projectName">
                   <p className={styles.formTitle}>Título da Notícia</p>
                   <input
                     type="text"
-                    id="TitleNews"
+                    id="projectName"
                     className={styles.formInput}
-                    onChange={e => setTitleNews(e.target.value)}
+                    onChange={e => setProjectName(e.target.value)}
                   />
                 </label>
-                <label htmlFor="AbstractNews">
+                <label htmlFor="projectType">
                   <p className={styles.formTitle}>Subtítulo da Notícia</p>
                   <input
                     type="text"
-                    id="AbstractNews"
+                    id="projectType"
                     className={styles.formInput}
-                    onChange={e => setAbstractNews(e.target.value)}
+                    onChange={e => setProjectType(e.target.value)}
                   />
                 </label>
                 <label htmlFor="LinkNews">
@@ -303,43 +313,43 @@ const Projects: FC = () => {
                     type="text"
                     id="LinkNews"
                     className={styles.formInput}
-                    onChange={e => setLinkNews(e.target.value)}
+                    onChange={e => setProjectInvestment(e.target.value)}
                   />
                 </label>
-                <label htmlFor="AutorNews">
+                <label htmlFor="projectStatus">
                   <p className={styles.formTitle}>Autor da Notícia</p>
                   <input
                     type="text"
-                    id="AutorNews"
+                    id="projectStatus"
                     className={styles.formInput}
-                    onChange={e => setAutorNews(e.target.value)}
+                    onChange={e => setProjectStatus(e.target.value)}
                   />
                 </label>
-                <label htmlFor="StateNews">
+                <label htmlFor="projectArea">
                   <p className={styles.formTitle}>State da Notícia</p>
                   <input
                     type="text"
-                    id="StateNews"
+                    id="projectArea"
                     className={styles.formInput}
-                    onChange={e => setStateNews(e.target.value)}
+                    onChange={e => setProjectArea(e.target.value)}
                   />
                 </label>
-                <label htmlFor="DateNews">
+                <label htmlFor="projectOwner">
                   <p className={styles.formTitle}>Date da Notícia</p>
                   <input
                     type="text"
-                    id="DateNews"
+                    id="projectOwner"
                     className={styles.formInput}
-                    onChange={e => setDateNews(e.target.value)}
+                    onChange={e => setProjectOwner(e.target.value)}
                   />
                 </label>
-                <label htmlFor="TextNews">
+                <label htmlFor="approvalYear">
                   <p className={styles.formTitle}>Text da Notícia</p>
                   <input
                     type="text"
-                    id="TextNews"
+                    id="approvalYear"
                     className={styles.formInput}
-                    onChange={e => setTextNews(e.target.value)}
+                    onChange={e => setApprovalYear(e.target.value)}
                   />
                 </label>
               </div>
@@ -350,7 +360,7 @@ const Projects: FC = () => {
             </div>
             <div className={styles.buttons}>
               <button type="submit" className={styles.buttonAdd}>
-                ADICIONAR NOVA
+                ADICIONAR PROJETO
               </button>
             </div>
           </form>

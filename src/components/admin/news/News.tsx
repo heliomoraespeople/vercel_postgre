@@ -189,6 +189,7 @@ const News: FC = () => {
                   <p className={styles.formTitle}>Título da Notícia</p>
                   <input
                     type="text"
+                    placeholder='0/100'
                     id="TitleNews"
                     className={styles.formInput}
                     value={titleNews}
@@ -284,6 +285,7 @@ const News: FC = () => {
                   <input
                     type="text"
                     id="TitleNews"
+                    placeholder='0/100'
                     className={styles.formInput}
                     onChange={e => setTitleNews(e.target.value)}
                   />
@@ -353,6 +355,7 @@ const News: FC = () => {
                 ADICIONAR NOVA
               </button>
             </div>
+
           </form>
         )}
       </div>

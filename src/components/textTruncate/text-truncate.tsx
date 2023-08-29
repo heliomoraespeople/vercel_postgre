@@ -7,11 +7,11 @@ interface ITextTruncateProps {
 }
 
 const TextTruncate: React.FC<ITextTruncateProps> = ({ text, limit, className }) => {
-  if (text.length <= limit) {
+  if (text?.length <= limit) {
     return <span className={className}>{text}</span>;
   }
 
-  const truncatedText = text.slice(0, limit) + '...';
+  const truncatedText = text?.slice(0, limit) + '...';
 
   return <span className={className}>{truncatedText}</span>;
 };

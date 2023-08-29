@@ -4,7 +4,7 @@ import Priorities from '../../../models/enums/CardPriorities';
 import TextTruncate from '../../textTruncate/text-truncate';
 
 export interface ICardArtigo {
-  imageFile: string;
+  image: string;
   abstract: string;
   title: string;
   priority: Priorities.high | Priorities.mid | Priorities.low;
@@ -12,7 +12,7 @@ export interface ICardArtigo {
 }
 
 const CardArtigo: React.FC<ICardArtigo> = ({
-  imageFile,
+  image,
   abstract,
   title,
   priority,
@@ -26,8 +26,8 @@ const CardArtigo: React.FC<ICardArtigo> = ({
     <div className={[styles.container, styles[priority]].join(' ')}>
       <div className={styles.background}>
         <picture>
-          <source srcSet={imageFile} type="image/jpg" />
-          <img alt={title} src={imageFile} />
+          <source srcSet={image} type="image/jpg" />
+          <img alt={title} src={image} />
         </picture>
       </div>
       <div className={styles.textWrapper}>
