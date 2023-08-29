@@ -7,7 +7,7 @@ import { ICardArtigo } from './CardArtigo';
 
 //noticia 1
 const bull: ICardArtigo = {
-  imageFile: '/noticias/noticia1.jpg',
+  image: '/noticias/noticia1.jpg',
   title: 'Inovação: Escassez e Abundância impulsionam a mudança',
   abstract:
     'Explorando os desafios e oportunidades no cenário da inovação.',
@@ -17,7 +17,7 @@ const bull: ICardArtigo = {
 
 //noticia 2
 const dice: ICardArtigo = {
-  imageFile: '/noticias/noticia2.jpg',
+  image: '/noticias/noticia2.jpg',
   title: 'Startups Verdes: Motores da Inovação Sustentável em Ação',
   abstract:
     'Explorando o papel das startups na busca por soluções ambientalmente responsáveis.',
@@ -27,7 +27,7 @@ const dice: ICardArtigo = {
 
 //noticia 3
 const sunset: ICardArtigo = {
-  imageFile: '/noticias/noticia3.jpg',
+  image: '/noticias/noticia3.jpg',
   title: 'Prêmio Valor Inovação: Energisa é TOP 2 no setor elétrico',
   abstract:
     'Inovação marcante impulsiona o reconhecimento da Energisa no mercado elétrico',
